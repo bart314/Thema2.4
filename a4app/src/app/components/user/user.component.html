@@ -1,0 +1,39 @@
+<b>{{name}}</b>
+
+<button (click)="changeEdit()">Toggle Edit</button>
+
+<div *ngIf="editable">
+
+<h1>Edit name</h1>
+<form>
+  <label for="name">Name: </label>
+  <input type="text" [(ngModel)]="name" name="name">
+</form>
+
+</div>
+
+<ul>
+  <li>{{age}}</li>
+  <li>{{address.street}}, {{address.city}}</li>
+</ul>
+
+<b>Hobbies</b>
+<form (submit)="addHobby(hobby.value)">
+  <div>
+    <label for="hobby">Hobby:</label>
+    <input type="text" #hobby>
+  </div>
+</form>
+<ul>
+  <li *ngFor="let h of hobbies">
+    {{h}}
+  </li>
+</ul>
+
+<button (click)="buttonClicked()">Klik hier</button>
+
+<h1>Post</h1>
+<div *ngFor="let p of posts">
+  <h4>{{ p.title}}</h4>
+  <p>{{ p.body }}</p>
+</div>
